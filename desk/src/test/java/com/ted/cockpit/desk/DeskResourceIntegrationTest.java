@@ -31,6 +31,9 @@ public class DeskResourceIntegrationTest {
 	@Autowired
 	private DeskResource deskResource;
 	
+	@Autowired
+	private ObjectMapper objectMapper;
+	
 	@Before
 	public void setUp() throws Exception {
 		mvc = MockMvcBuilders.standaloneSetup(deskResource).build();
@@ -47,7 +50,7 @@ public class DeskResourceIntegrationTest {
 						new ObjectMapper().writeValueAsString(desk)))
 				.andExpect(status().isCreated()).andReturn();
 		
-		Desk response = new ObjectMapper().readValue(result.getResponse().getContentAsString(), Desk.class);
+		Desk response = objectMapper.readValue(result.getResponse().getContentAsString(), Desk.class);
 		assertNotNull(response);
 		assertNotNull(response.getId());
 	}
