@@ -10,10 +10,9 @@ import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -23,9 +22,8 @@ import com.ted.cockpit.desk.entity.Desk;
 import com.ted.cockpit.desk.resource.DeskResource;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration
-@ContextConfiguration(classes = DeskConfiguration.class)
-@WebAppConfiguration
+@SpringApplicationConfiguration(classes = Application.class)
+@WebIntegrationTest({"server.port=0", "management.port=0"})
 public class DeskResourceIntegrationTest {
 
 	private MockMvc mvc;
