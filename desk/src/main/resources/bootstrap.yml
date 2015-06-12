@@ -1,0 +1,13 @@
+server:
+    port: ${PORT:9001}
+spring:
+    application:
+        name: desk
+    boot:
+        admin:
+            url: http://localhost:9000
+    cloud:
+        config:
+            enabled: false
+management:
+    contextPath: /management
