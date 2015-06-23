@@ -1,6 +1,6 @@
 spring:
     application:
-        name: desk
+        name: zuul
         
     cloud:
         config:
