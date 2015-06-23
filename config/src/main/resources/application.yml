@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+management:
+  context-path: /management
+  
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/dknipping/ted-configuration
+          basedir: target/config
