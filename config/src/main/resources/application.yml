@@ -9,5 +9,4 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/dknipping/ted/ted-configuration
-          basedir: target/config
+          uri: https://github.com/dknipping/ted-configuration.git

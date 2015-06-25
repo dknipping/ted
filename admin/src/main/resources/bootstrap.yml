@@ -1,13 +1,6 @@
-server:
-    port: ${PORT:9000}
 spring:
     application:
         name: admin
-    boot:
-        admin:
-            url: http://localhost:${server.port}
     cloud:
         config:
-            enabled: false
-management:
-    contextPath: /management
+            uri: ${CONFIG_SERVER_URL:http://localhost:9000}
