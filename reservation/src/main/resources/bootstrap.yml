@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: reservation
+
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL:http://localhost:9000}
