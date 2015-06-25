@@ -10,7 +10,7 @@
 	
 	<artifactId>zuul</artifactId>
 	<groupId>com.ted.cockpit</groupId>
-	<name>Spring Boot Simple Sample</name>
+	<name>zuul</name>
 	<version>1.0.0-SNAPSHOT</version>
 	
 	<properties>
