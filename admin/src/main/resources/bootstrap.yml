@@ -8,6 +8,7 @@ spring:
             url: http://localhost:${server.port}
     cloud:
         config:
-            enabled: false
+            enabled: true
+            uri: ${CONFIG_SERVER_URL:http://localhost:9000}
 management:
     contextPath: /management
