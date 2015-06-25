@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ted.cockpit.room.entity.Room;
 
+
 public interface RoomRepository extends JpaRepository<Room, String> {
 
 	List<Room> findByFloorNumber(int floorNumber);
