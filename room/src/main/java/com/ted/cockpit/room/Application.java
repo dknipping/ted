@@ -16,38 +16,37 @@ import com.ted.cockpit.room.service.RoomService;
 @SpringBootApplication
 @EnableEurekaClient
 public class Application {
-	
+
     @Autowired
     private RoomService roomService;
-    
+
     public static void main(String[] args) {
-		SpringApplication.run(RoomConfiguration.class, args);
-	}
-	
-	@PostConstruct
-	public void createRooms(){
-	    Room room = new Room();
-	    room.setBuildingName("Düsseldorf Office");
-	    room.setFloorNumber(3);
-	    room.setId("meetingRoom");
-	    List<String> deskIds = new ArrayList<>();
-	    deskIds.add("/desk/desks/001");
-	    deskIds.add("/desk/desks/002");
-	    deskIds.add("/desk/desks/003");
-	    deskIds.add("/desk/desks/004");
-	    room.setDeskIds(deskIds);
-	    
-	    roomService.createRoom(room);
-	    
-	    room.setBuildingName("Eschborn Office");
-	    room.setFloorNumber(4);
-        room.setId("workRoom001");
+        SpringApplication.run(RoomConfiguration.class, args);
+    }
+
+    @PostConstruct
+    public void createRooms() {
+        Room room = new Room();
+        room.setBuildingName("Düsseldorf Office");
+        room.setFloorNumber(3);
+        List<String> deskIds = new ArrayList<>();
+        deskIds.add("/desk/desks/001");
+        deskIds.add("/desk/desks/002");
+        deskIds.add("/desk/desks/003");
+        deskIds.add("/desk/desks/004");
+        room.setDeskIds(deskIds);
+
+        roomService.createRoom(room);
+
+        room = new Room();
+        room.setBuildingName("Eschborn Office");
+        room.setFloorNumber(4);
         deskIds = new ArrayList<>();
         deskIds.add("/desk/desks/021");
         deskIds.add("/desk/desks/022");
         deskIds.add("/desk/desks/023");
         room.setDeskIds(deskIds);
-        
+
         roomService.createRoom(room);
-	}
+    }
 }

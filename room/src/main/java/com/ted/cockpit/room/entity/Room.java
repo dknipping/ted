@@ -14,7 +14,7 @@ public class Room implements Serializable {
 	private static final long serialVersionUID = 6291834871230951235L;
 
 	@Id
-	private String id = UUID.randomUUID().toString();
+	private String id;
 	
 	private String buildingName;
 	
@@ -22,6 +22,10 @@ public class Room implements Serializable {
 	
 	@ElementCollection
 	private List<String> deskIds;
+	
+	public Room(){
+	    id = UUID.randomUUID().toString();
+	}
 
 	public String getId() {
 		return id;
