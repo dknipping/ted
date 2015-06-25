@@ -30,5 +30,4 @@ public class RoomConfiguration {
 		return apiInfo;
 	}
 
-
 }
