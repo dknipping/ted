@@ -1,5 +1,7 @@
 package com.ted.cockpit.desk.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,17 +16,26 @@ public class DeskServiceImpl implements DeskService {
 
 	@Override
 	public Desk createDesk(Desk desk) {
+		
 		return deskRepository.save(desk);
 	}
 
 	@Override
-	public Desk findDeskByNumber(Integer number) {
-		return deskRepository.findByDeskNumber(number);
+	public void deleteDesk(Desk desk) {
+		
+		deskRepository.delete(desk);
 	}
 
 	@Override
-	public void deleteDesk(Long id) {
-		deskRepository.delete(id);
+	public List<Desk> findAllDesks() {
+		
+		return deskRepository.findAll();
+	}
+
+	@Override
+	public Desk findDesk(Integer deskNumber) {
+		
+		return deskRepository.findByDeskNumber(deskNumber);
 	}
 
 }

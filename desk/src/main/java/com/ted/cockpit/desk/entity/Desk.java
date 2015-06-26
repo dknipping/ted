@@ -2,6 +2,7 @@ package com.ted.cockpit.desk.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class Desk implements Serializable {
 	
 	private String room;
 	
+	@Column(name="deskNumber", unique=true, nullable=false)
 	private Integer deskNumber;
 	
 	public Desk() {

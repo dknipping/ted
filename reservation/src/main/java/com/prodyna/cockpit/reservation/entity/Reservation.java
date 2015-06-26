@@ -25,7 +25,7 @@ public class Reservation implements Serializable {
     private Date editDate;
 
     private String itemId;
-    private String itemType;
+    private boolean isRoom;
 
     private String description;
 
@@ -85,12 +85,12 @@ public class Reservation implements Serializable {
         this.itemId = itemId;
     }
 
-    public String getItemType() {
-        return itemType;
+    public boolean isRoom() {
+        return isRoom;
     }
 
-    public void setItemType(String itemType) {
-        this.itemType = itemType;
+    public void setRoom(boolean isRoom) {
+        this.isRoom = isRoom;
     }
 
     public String getDescription() {

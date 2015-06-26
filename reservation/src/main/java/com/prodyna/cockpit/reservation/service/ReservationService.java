@@ -5,7 +5,9 @@ import com.prodyna.cockpit.reservation.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by mfroehlich on 24.04.2015.
@@ -24,5 +26,10 @@ public class ReservationService {
     public Reservation createReservation(Reservation reservation) {
         Reservation savedReservation = reservationRepository.save(reservation);
         return savedReservation;
+    }
+
+    public Collection<Reservation> findAllReservations() {
+        Collection<Reservation> resCol = reservationRepository.findAll();
+        return resCol;
     }
 }

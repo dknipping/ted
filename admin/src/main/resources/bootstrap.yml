@@ -1,11 +1,14 @@
-<<<<<<< HEAD
 server:
-    port: ${PORT:9090}
-=======
->>>>>>> 20d97659f80d728b55e94d65f9b37cf1d565b9d9
+    port: ${PORT:9000}
 spring:
     application:
         name: admin
+    boot:
+        admin:
+            url: http://localhost:${server.port}
     cloud:
         config:
+            enabled: true
             uri: ${CONFIG_SERVER_URL:http://localhost:9000}
+management:
+    contextPath: /management
