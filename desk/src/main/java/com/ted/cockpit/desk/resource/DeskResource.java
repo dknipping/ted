@@ -42,7 +42,7 @@ public class DeskResource {
 		return new ResponseEntity<Desk>(currentDesk, HttpStatus.NOT_MODIFIED);
     }
 	
-	@RequestMapping(value = "/desk/{deskNumber}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/desks/{deskNumber}", method = RequestMethod.DELETE)
     public HttpEntity<Void> deleteDesk(@PathVariable Integer deskNumber) {
 		
 		Desk desk = deskService.findDesk(deskNumber);
@@ -57,7 +57,7 @@ public class DeskResource {
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 	
-	@RequestMapping(value ="/desk/desks" , method = RequestMethod.GET)
+	@RequestMapping(value ="/desks" , method = RequestMethod.GET)
 	public HttpEntity<List<Desk>> findAllDesks() {
 		List<Desk> allDesks = deskService.findAllDesks();
 		return new ResponseEntity<List<Desk>>(allDesks, HttpStatus.OK);
