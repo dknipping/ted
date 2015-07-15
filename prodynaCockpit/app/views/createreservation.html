@@ -1,0 +1,36 @@
+<p class="lead">Create reservation</p>
+
+<!-- new Date(year, month, day, hours, minutes, seconds, milliseconds) -->
+
+<alert type="info">
+    Create a reservation for {{createReservationCtrl.itemType}} (id={{createReservationCtrl.itemId}});
+
+</alert>
+
+<form name="createreservationform" class="form-horizontal"
+         ng-submit="createReservationCtrl.createReservation()"
+         novalidate>
+
+    <div class="input-group">
+        <input placeholder="Pick a from-date" class="form-control"
+               datepicker-popup="{{createReservationCtrl.dateFormat}}"
+               datepicker-options="createReservationCtrl.dateOptions"
+               type="text" ng-model="createReservationCtrl.fromDate"
+               is-open="createReservationCtrl.pickerOpened" close-text="Close"
+               ng-required="true" />
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="createReservationCtrl.openPicker($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+        </button>
+      </span>
+    </div>
+
+    <br/>
+    <div class="row">
+        <div class="col-sm-10">
+            <button class="btn btn-success" type="submit"
+                    ng-disabled="createreservationform.$invalid">Create</button>
+        </div>
+    </div>
+
+</form>
