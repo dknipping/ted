@@ -1,0 +1,39 @@
+<p class="lead">Create desk</p>
+
+<form class="form-horizontal" name="createdeskform" novalidate>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Desk number:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control"
+                   placeholder="Enter desk number" name="desknumber"
+                   ng-required="true"
+                   ng-model="createDeskCtrl.desk.deskNumber"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Room number:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control"
+                   placeholder="Enter room number" name="roomnumber"
+                   ng-required="true"
+                   ng-model="createDeskCtrl.desk.room"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-9">
+            <button class="btn btn-success" ng-disabled="createdeskform.$invalid"
+                    ng-click="createDeskCtrl.createDesk()">Create desk
+
+        </div>
+    </div>
+    </button>
+</form>
+
+<ul>
+    <li ng-repeat="desk in createDeskCtrl.desksModel.desks">
+        {{desk | json}}
+    </li>
+</ul>
+
+

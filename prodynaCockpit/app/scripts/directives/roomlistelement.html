@@ -1,0 +1,16 @@
+<li class="list-group-item">
+    <strong>{{roomListElementCtrl.room.name}}</strong> (Nummer: {{roomListElementCtrl.room.nr}}, Anzahl Personen: {{roomListElementCtrl.room.size}})
+
+    <div class="btn-group navbar-right" dropdown>
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+            Actions <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href ng-click="roomListElementCtrl.editRoom()">Edit</a></li>
+            <li><a href ng-click="roomListElementCtrl.bookRoom()">Book</a></li>
+            <li class="divider"></li>
+            <li><a href ng-click="roomListElementCtrl.deleteRoom()">Delete</a></li>
+        </ul>
+    </div>
+</li>
+

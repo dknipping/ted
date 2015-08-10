@@ -1,0 +1,16 @@
+<p class="lead">All rooms</p>
+
+<ul class="list-group">
+    <room-list-element
+            ng-repeat="room in listAllRoomsCtrl.roomsModel.rooms"
+            room="room">
+    </room-list-element>
+</ul>
+
+<div class="row">
+    <div class="container">
+        <button class="btn btn-success" ng-click="listAllRoomsCtrl.addNewRoom()">
+            <span class="glyphicon glyphicon-plus"></span> Add new room
+        </button>
+    </div>
+</div>
