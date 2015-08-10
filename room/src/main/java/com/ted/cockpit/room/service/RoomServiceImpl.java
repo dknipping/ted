@@ -1,10 +1,12 @@
 package com.ted.cockpit.room.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.ted.cockpit.room.entity.Room;
 import com.ted.cockpit.room.repository.RoomRepository;
 
@@ -20,8 +22,13 @@ public class RoomServiceImpl implements RoomService{
 	}
 
 	@Override
+	@HystrixCommand(fallbackMethod = "getRoomFallback")
 	public Room getRoom(String id) {
 		return roomRepository.findOne(id);
+	}
+	
+	public Room getRoomFallback(String id) {
+		return null;
 	}
 
 	@Override
@@ -35,8 +42,13 @@ public class RoomServiceImpl implements RoomService{
 	}
 
 	@Override
+	@HystrixCommand(fallbackMethod = "findAllFallback")
 	public List<Room> findAll() {
 		return roomRepository.findAll();
+	}
+	
+	public List<Room> findAllFallback() {
+		return new ArrayList<>();
 	}
 
 	@Override

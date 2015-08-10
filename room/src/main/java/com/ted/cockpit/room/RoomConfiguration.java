@@ -1,5 +1,6 @@
 package com.ted.cockpit.room;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableAutoConfiguration
 @EnableSwagger2
+@EnableHystrix
 @ComponentScan
 public class RoomConfiguration {
 
